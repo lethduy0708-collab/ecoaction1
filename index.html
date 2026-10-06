@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EcoAction – Small actions. A cleaner, greener city.</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f8f2;--ink:#12302b;--mute:#4a635d;--card:#ffffff;--line:#cfe0d3;--leaf:#2f8a4a;--deep:#0f4a42;--sun:#f4b942;--sky:#cdeee6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1f1c;--ink:#e6f3ec;--mute:#a4bdb4;--card:#152a26;--line:#25423b;--leaf:#5ec47c;--deep:#8fd9c4;--sky:#14352f}}
+:root[data-theme="dark"]{--bg:#0e1f1c;--ink:#e6f3ec;--mute:#a4bdb4;--card:#152a26;--line:#25423b;--leaf:#5ec47c;--deep:#8fd9c4;--sky:#14352f}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.6 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:'Bricolage Grotesque',Georgia,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;max-width:1080px;margin:0 auto;position:relative;z-index:3}
+.logo{font:800 1.4rem 'Bricolage Grotesque',sans-serif;text-decoration:none;color:var(--deep)}
+.nav nav{display:flex;gap:18px;flex-wrap:wrap}
+.nav nav a{text-decoration:none;font-weight:600;color:var(--mute)}
+.nav nav a:hover{color:var(--leaf)}
+.hero{background:var(--sky);margin-top:-64px;padding-top:64px;overflow:hidden;position:relative}
+.hero .wrap{display:grid;grid-template-columns:1fr;gap:10px;padding-top:40px}
+.hero h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:800;color:var(--deep);max-width:12ch}
+.hero p{max-width:46ch;color:var(--ink);font-size:1.15rem}
+.btn{display:inline-block;background:var(--deep);color:var(--bg);padding:14px 26px;border-radius:999px;font-weight:600;text-decoration:none;transition:transform .2s;width:fit-content}
+.btn:hover{transform:translateY(-3px)}
+.scene{width:100%;display:block;margin-top:10px}
+section{padding:72px 0}
+.sec-head{margin-bottom:36px}
+.sec-head h2{font-size:clamp(1.9rem,4.5vw,2.8rem);font-weight:800;color:var(--deep)}
+.sec-head p{color:var(--mute);margin:8px 0 0;max-width:52ch}
+.actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+.act{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.act:nth-child(even){border-radius:22px 22px 60px 22px}
+.act svg{width:100%;height:150px;display:block}
+.act div{padding:18px 22px 24px}
+.act h3{font-size:1.3rem;margin-bottom:6px}
+.act p{margin:0;color:var(--mute)}
+.why{background:var(--deep);color:#eaf6ef}
+.why .sec-head h2{color:#fff}.why .sec-head p{color:#b9d9cc}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:34px 40px}
+.why-grid h3{font-size:1.25rem;margin-bottom:8px;color:var(--sun)}
+.why-grid p{margin:0;color:#d4e9de}
+.why-grid svg{width:54px;height:54px;margin-bottom:10px}
+.ben{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.ben article{border-left:5px solid var(--leaf);background:var(--card);padding:20px 22px;border-radius:0 18px 18px 0}
+.ben h3{font-size:1.15rem;margin-bottom:6px}
+.ben p{margin:0;color:var(--mute);font-size:.98rem}
+.ben b{color:var(--leaf)}
+footer{text-align:center;padding:56px 20px 70px;background:var(--sky);color:var(--deep);font:800 clamp(1.3rem,3vw,1.8rem)/1.3 'Bricolage Grotesque',sans-serif}
+footer small{display:block;font:400 .95rem Figtree,sans-serif;margin-top:8px;color:var(--mute)}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+.gal figure{margin:0;border-radius:20px;overflow:hidden;background:var(--card);border:1px solid var(--line)}
+.gal svg{width:100%;display:block;aspect-ratio:400/260}
+.gal figcaption{padding:14px 18px 18px;color:var(--mute);font-size:.97rem}
+.gal figcaption b{display:block;color:var(--ink);font:800 1.1rem 'Bricolage Grotesque',sans-serif;margin-bottom:2px}
+.shim{animation:shim 5s ease-in-out infinite alternate}
+@keyframes shim{from{opacity:.25;transform:translateX(-10px)}to{opacity:.8;transform:translateX(10px)}}
+.beam{animation:beam 6s ease-in-out infinite alternate}
+@keyframes beam{from{opacity:.25}to{opacity:.7}}
+/* animation */
+.sway{transform-box:fill-box;transform-origin:50% 100%;animation:sway 4s ease-in-out infinite alternate}
+.sway.b{animation-duration:5.2s;animation-delay:-1.5s}
+@keyframes sway{from{transform:rotate(-3deg)}to{transform:rotate(3deg)}}
+.cloud{animation:drift 40s linear infinite}
+.cloud.b{animation-duration:55s;animation-delay:-20s}
+@keyframes drift{from{transform:translateX(-200px)}to{transform:translateX(1100px)}}
+.sun{transform-box:fill-box;transform-origin:center;animation:pulse 5s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.08)}}
+.rays{transform-box:fill-box;transform-origin:center;animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.leaf{animation:fall 9s linear infinite;opacity:0}
+.leaf:nth-of-type(2){animation-delay:-3s}.leaf:nth-of-type(3){animation-delay:-6s}
+@keyframes fall{0%{transform:translate(0,-20px) rotate(0);opacity:0}10%{opacity:1}100%{transform:translate(-120px,300px) rotate(540deg);opacity:0}}
+.bob{animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.grow{transform-box:fill-box;transform-origin:50% 100%;animation:grow 4s ease-in-out infinite}
+@keyframes grow{0%,15%{transform:scale(.3)}60%,100%{transform:scale(1)}}
+.wave{animation:wave 6s linear infinite}
+@keyframes wave{to{transform:translateX(-80px)}}
+.blink{animation:blink 1.6s steps(2) infinite}
+@keyframes blink{50%{opacity:.2}}
+.spin2{transform-box:fill-box;transform-origin:center;animation:spin 6s linear infinite}
+.walk{animation:walk 14s linear infinite}
+@keyframes walk{from{transform:translateX(-80px)}to{transform:translateX(1000px)}}
+/* sign-up + contact */
+.signup{background:var(--sky)}
+.su-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px 22px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px}
+.su-form .full{grid-column:1/-1}
+.su-form label{display:block;font-weight:600;margin-bottom:6px;color:var(--ink)}
+.su-form input,.su-form select,.su-form textarea{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.su-form textarea{min-height:110px;resize:vertical}
+.su-form button.btn{border:0;cursor:pointer;font:600 1.05rem Figtree,sans-serif}
+.su-note{margin:0;color:var(--mute);font-size:.95rem}
+.su-status{margin:0;font-weight:600;color:var(--leaf)}
+.contact{padding:56px 0}
+.contact .box{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--leaf);border-radius:0 18px 18px 0;padding:24px 26px}
+.contact h2{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;color:var(--deep);margin-bottom:8px}
+.contact p{margin:0;color:var(--mute)}
+.contact a{color:var(--leaf);font-weight:600}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}.leaf{opacity:1}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="#top">EcoAction</a>
+  <nav><a href="#help">How you help</a><a href="#why">Why we do it</a><a href="#benefits">Who benefits</a></nav>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <h1>Small actions. A cleaner, greener city.</h1>
+    <p>EcoAction brings neighbors, students and teachers together to clean up, plant, teach and repair. Local volunteers make local change that people can see.</p>
+    <a class="btn" href="#help">See how you can help</a>
+  </div>
+  <svg class="scene" viewBox="0 0 1000 300" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Animated city park with swaying trees, a rising sun, drifting clouds and volunteers walking with bags">
+    <g class="sun"><circle cx="840" cy="90" r="38" fill="#f4b942"/></g>
+    <g class="rays"><g stroke="#f4b942" stroke-width="5" stroke-linecap="round"><path d="M840 28v-14M840 152v14M778 90h-14M902 90h14M796 46l-10-10M884 134l10 10M884 46l10-10M796 134l-10 10"/></g></g>
+    <g fill="#fff" opacity=".9"><g class="cloud"><ellipse cx="120" cy="60" rx="50" ry="16"/><ellipse cx="150" cy="48" rx="34" ry="16"/></g><g class="cloud b"><ellipse cx="60" cy="110" rx="40" ry="12"/><ellipse cx="85" cy="100" rx="26" ry="12"/></g></g>
+    <path d="M0 200 Q150 150 300 195 T620 185 T1000 190V300H0Z" fill="#9fd4a8"/>
+    <g fill="#6d7f86"><rect x="560" y="120" width="40" height="80"/><rect x="610" y="90" width="50" height="110"/><rect x="670" y="135" width="36" height="65"/></g>
+    <g fill="#d6eef0"><rect x="570" y="132" width="8" height="8"/><rect x="584" y="132" width="8" height="8"/><rect x="622" y="102" width="8" height="8"/><rect x="638" y="102" width="8" height="8"/><rect x="622" y="122" width="8" height="8"/></g>
+    <path d="M0 230 Q250 205 500 232 T1000 225V300H0Z" fill="#4aa361"/>
+    <g class="sway"><rect x="118" y="150" width="12" height="80" fill="#7a5233"/><circle cx="124" cy="130" r="42" fill="#2f8a4a"/><circle cx="100" cy="150" r="26" fill="#3da05a"/></g>
+    <g class="sway b"><rect x="296" y="170" width="10" height="62" fill="#7a5233"/><circle cx="301" cy="152" r="32" fill="#37995a"/></g>
+    <g class="sway"><rect x="436" y="140" width="12" height="90" fill="#7a5233"/><circle cx="442" cy="118" r="46" fill="#2a7d44"/><circle cx="470" cy="142" r="28" fill="#3da05a"/></g>
+    <g class="sway b"><rect x="880" y="160" width="10" height="72" fill="#7a5233"/><circle cx="885" cy="140" r="36" fill="#2f8a4a"/></g>
+    <g class="walk"><g class="bob"><circle cx="0" cy="190" r="9" fill="#f0c9a0"/><rect x="-8" y="199" width="16" height="28" rx="6" fill="#e2563b"/><rect x="-6" y="227" width="5" height="14" fill="#254a63"/><rect x="2" y="227" width="5" height="14" fill="#254a63"/><path d="M8 205l12 8" stroke="#e2563b" stroke-width="5" stroke-linecap="round"/><ellipse cx="24" cy="222" rx="11" ry="13" fill="#3a3f4a"/></g></g>
+    <g class="walk" style="animation-delay:-6s"><g class="bob" style="animation-delay:-.8s"><circle cx="0" cy="196" r="8" fill="#c58b5c"/><rect x="-7" y="204" width="14" height="26" rx="6" fill="#f4b942"/><rect x="-5" y="230" width="5" height="12" fill="#254a63"/><rect x="2" y="230" width="5" height="12" fill="#254a63"/></g></g>
+    <g class="leaf"><path d="M900 0c14 6 14 22 0 28-14-6-14-22 0-28z" fill="#5ec47c"/></g>
+    <g class="leaf" style="transform:translateX(-300px)"><path d="M900 0c14 6 14 22 0 28-14-6-14-22 0-28z" fill="#8fd96a"/></g>
+    <g class="leaf" style="transform:translateX(-600px)"><path d="M900 0c14 6 14 22 0 28-14-6-14-22 0-28z" fill="#2f8a4a"/></g>
+  </svg>
+</div>
+
+<section id="help"><div class="wrap">
+  <div class="sec-head"><h2>How volunteers help</h2><p>Five practical ways to take part through the platform. Pick the one that fits your skills and your weekend.</p></div>
+  <div class="actions">
+    <article class="act">
+      <svg viewBox="0 0 300 150" role="img" aria-label="Animated clean-up: litter being picked into a bin"><rect width="300" height="150" fill="#d9f0e4"/><rect y="110" width="300" height="40" fill="#8cc79a"/>
+        <g class="bob"><rect x="40" y="86" width="22" height="30" rx="4" fill="#4aa8d8"/><rect x="45" y="78" width="12" height="10" fill="#4aa8d8"/></g>
+        <g class="bob" style="animation-delay:-1s"><path d="M110 100l22-6 4 18-24 4z" fill="#e2b04a"/></g>
+        <g class="bob" style="animation-delay:-.5s"><circle cx="85" cy="108" r="9" fill="#d96a5a"/></g>
+        <rect x="190" y="70" width="60" height="50" rx="6" fill="#2f8a4a"/><rect x="184" y="62" width="72" height="12" rx="4" fill="#256f3b"/><path d="M212 84l8 12 8-12M220 84v20" stroke="#fff" stroke-width="4" fill="none"/>
+        <g class="spin2" style="animation-duration:9s"><path d="M150 30a14 14 0 1 1-10 4" stroke="#2f8a4a" stroke-width="4" fill="none" stroke-linecap="round"/></g></svg>
+      <div><h3>Neighborhood clean-up drives</h3><p>Join weekend campaigns to remove plastic and litter from local parks, riverbanks and residential streets.</p></div>
+    </article>
+    <article class="act">
+      <svg viewBox="0 0 300 150" role="img" aria-label="Animated sapling growing"><rect width="300" height="150" fill="#d9f0f4"/><rect y="115" width="300" height="35" fill="#7a5233"/>
+        <g class="grow"><rect x="96" y="70" width="8" height="48" fill="#6b4a2f"/><circle cx="100" cy="58" r="30" fill="#2f8a4a"/><circle cx="82" cy="72" r="18" fill="#3da05a"/></g>
+        <g class="grow" style="animation-delay:-1.3s"><rect x="196" y="82" width="6" height="36" fill="#6b4a2f"/><circle cx="199" cy="72" r="22" fill="#37995a"/></g>
+        <g class="grow" style="animation-delay:-2.6s"><path d="M150 118v-26" stroke="#2f8a4a" stroke-width="4"/><path d="M150 100c-14-2-18-12-16-18 12 0 18 6 16 18zM150 94c12-2 18-10 16-16-12 0-18 6-16 16z" fill="#5ec47c"/></g></svg>
+      <div><h3>Urban tree planting and greening</h3><p>Plant trees, build community gardens and restore green patches in concrete areas to improve local air quality.</p></div>
+    </article>
+    <article class="act">
+      <svg viewBox="0 0 300 150" role="img" aria-label="Animated recycling workshop"><rect width="300" height="150" fill="#f3efd2"/><rect x="30" y="20" width="240" height="70" rx="6" fill="#2d5d54"/><path d="M60 40h70M60 56h110M60 72h50" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+        <g class="spin2"><path d="M220 38l12 20h-24zM236 66l-12 20-12-12zM204 66l-12-12 24-2z" fill="#8fd96a"/></g>
+        <g class="bob"><circle cx="70" cy="112" r="10" fill="#f0c9a0"/><rect x="62" y="122" width="16" height="22" rx="5" fill="#e2563b"/></g>
+        <g class="bob" style="animation-delay:-.7s"><circle cx="150" cy="114" r="9" fill="#c58b5c"/><rect x="143" y="123" width="14" height="21" rx="5" fill="#4aa8d8"/></g>
+        <g class="bob" style="animation-delay:-1.4s"><circle cx="230" cy="114" r="9" fill="#e8b98c"/><rect x="223" y="123" width="14" height="21" rx="5" fill="#f4b942"/></g></svg>
+      <div><h3>Eco-education workshops</h3><p>If you love teaching, visit schools and community centers to run fun, hands-on workshops on recycling, composting and zero-waste living.</p></div>
+    </article>
+    <article class="act">
+      <svg viewBox="0 0 300 150" role="img" aria-label="Animated map with blinking hotspots"><rect width="300" height="150" fill="#dfeaf5"/><path d="M0 40H300M0 90H300M60 0V150M150 0V150M240 0V150" stroke="#b7cde3" stroke-width="3"/><path d="M0 120Q80 70 150 95T300 60" stroke="#6bb8e8" stroke-width="12" fill="none"/>
+        <circle class="blink" cx="95" cy="82" r="10" fill="#e2563b"/><circle class="blink" style="animation-delay:-.5s" cx="190" cy="85" r="10" fill="#e2563b"/><circle class="blink" style="animation-delay:-1s" cx="240" cy="40" r="10" fill="#f4b942"/>
+        <g class="bob"><path d="M150 40c-12 0-18 8-18 18 0 12 18 28 18 28s18-16 18-28c0-10-6-18-18-18z" fill="#2f8a4a"/><circle cx="150" cy="58" r="6" fill="#fff"/></g></svg>
+      <div><h3>Data and digital mapping</h3><p>Tech-savvy volunteers map polluted hotspots, log trash collection numbers and run social media campaigns that raise awareness.</p></div>
+    </article>
+    <article class="act">
+      <svg viewBox="0 0 300 150" role="img" aria-label="Animated repair gears"><rect width="300" height="150" fill="#f6e6d4"/>
+        <g class="spin2"><circle cx="110" cy="75" r="30" fill="#c8793c"/><circle cx="110" cy="75" r="12" fill="#f6e6d4"/><g stroke="#c8793c" stroke-width="10" stroke-linecap="round"><path d="M110 35v-10M110 115v10M70 75H60M150 75h10M82 47l-7-7M138 103l7 7M138 47l7-7M82 103l-7 7"/></g></g>
+        <g class="spin2" style="animation-direction:reverse"><circle cx="185" cy="88" r="22" fill="#2f8a4a"/><circle cx="185" cy="88" r="8" fill="#f6e6d4"/><g stroke="#2f8a4a" stroke-width="8" stroke-linecap="round"><path d="M185 58v-8M185 118v8M155 88h-8M215 88h8M164 67l-6-6M206 109l6 6M206 67l6-6M164 109l-6 6"/></g></g>
+        <path d="M230 30l30 30" stroke="#4a635d" stroke-width="8" stroke-linecap="round" class="bob"/></svg>
+      <div><h3>Upcycling and repair hubs</h3><p>Share skills like sewing, fixing broken electronics or making decor from recycled items, and teach others to waste less.</p></div>
+    </article>
+  </div>
+</div></section>
+
+<section id="field" style="padding-top:0"><div class="wrap">
+  <div class="sec-head"><h2>EcoAction in the field</h2><p>What a volunteer weekend looks like.</p></div>
+  <div class="gal">
+    <figure>
+      <svg viewBox="0 0 400 260" role="img" aria-label="Volunteers cleaning a riverbank at golden hour">
+        <defs>
+          <linearGradient id="g1s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a8fa8"/><stop offset=".55" stop-color="#f7c58a"/><stop offset="1" stop-color="#fbe3b5"/></linearGradient>
+          <radialGradient id="g1u" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff6d6"/><stop offset=".4" stop-color="#ffd988" stop-opacity=".7"/><stop offset="1" stop-color="#ffd988" stop-opacity="0"/></radialGradient>
+          <linearGradient id="g1w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3bf84"/><stop offset="1" stop-color="#2f6f80"/></linearGradient>
+          <linearGradient id="g1b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f7a3a"/><stop offset="1" stop-color="#22401f"/></linearGradient>
+          <filter id="g1f"><feGaussianBlur stdDeviation="3"/></filter>
+        </defs>
+        <rect width="400" height="260" fill="url(#g1s)"/>
+        <circle cx="280" cy="120" r="90" fill="url(#g1u)"/>
+        <path d="M0 125q60-35 120-10t130-12 150 14v40H0z" fill="#6f8f8a" opacity=".55" filter="url(#g1f)"/>
+        <path d="M0 140q80-22 160-4t240-6v40H0z" fill="#3f6b5a" opacity=".8"/>
+        <rect y="150" width="400" height="70" fill="url(#g1w)"/>
+        <g class="shim" stroke="#fff3d0" stroke-width="2" stroke-linecap="round" opacity=".6"><path d="M240 165h60M225 178h90M255 192h50M200 205h70"/></g>
+        <path d="M0 205q100-18 200-6t200-10V260H0z" fill="url(#g1b)"/>
+        <g fill="#1c2a1a"><path d="M50 215l6-70h8l6 70z" opacity="0"/>
+          <circle cx="110" cy="188" r="8"/><path d="M100 198q10-6 20 0l4 40h-6l-3-22-3 22h-6l-3-22-3 22h-6z"/>
+          <path d="M120 206l24 12" stroke="#1c2a1a" stroke-width="5" stroke-linecap="round"/><ellipse cx="148" cy="226" rx="11" ry="14" fill="#2b3a2a"/>
+          <circle cx="230" cy="196" r="7"/><path d="M221 205q9-5 18 0l3 34h-5l-3-18-3 18h-5l-3-18-3 18h-5z"/>
+          <path d="M236 214q12 8 14 22" stroke="#1c2a1a" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+        <g fill="#d9453a"><rect x="102" y="199" width="16" height="14" rx="3" opacity=".9"/></g>
+        <g fill="#2d4a24"><path d="M300 230q6-34 12-4q4-36 12 0q6-26 10 4z"/><path d="M340 235q4-30 10-2q4-30 10 2z"/></g>
+        <rect width="400" height="260" fill="#ffb86b" opacity=".08"/>
+      </svg>
+      <figcaption><b>Riverbank clean-up</b>Golden-hour crews bag plastic before the water carries it downstream.</figcaption>
+    </figure>
+    <figure>
+      <svg viewBox="0 0 400 260" role="img" aria-label="A volunteer planting a tree in morning light">
+        <defs>
+          <linearGradient id="g2s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fc7e0"/><stop offset="1" stop-color="#e6f3df"/></linearGradient>
+          <radialGradient id="g2c" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#7cc15a"/><stop offset=".6" stop-color="#3f8f3f"/><stop offset="1" stop-color="#235a2c"/></radialGradient>
+          <linearGradient id="g2g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6fae4a"/><stop offset="1" stop-color="#2f6a30"/></linearGradient>
+          <linearGradient id="g2l" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fffbe0" stop-opacity=".9"/><stop offset="1" stop-color="#fffbe0" stop-opacity="0"/></linearGradient>
+          <filter id="g2f"><feGaussianBlur stdDeviation="2.5"/></filter>
+        </defs>
+        <rect width="400" height="260" fill="url(#g2s)"/>
+        <g fill="#9bbfa8" filter="url(#g2f)" opacity=".8"><rect x="20" y="90" width="40" height="80"/><rect x="66" y="70" width="50" height="100"/><rect x="122" y="100" width="34" height="70"/><rect x="300" y="80" width="46" height="90"/><rect x="352" y="104" width="40" height="66"/></g>
+        <path d="M0 165q100-14 200 0t200-6V260H0z" fill="url(#g2g)"/>
+        <path d="M0 200q120-18 240 0t160-6V260H0z" fill="#2f6a30" opacity=".6"/>
+        <g class="sway b"><path d="M258 210c-4-60 0-100-6-130h14c-2 30 4 70 8 130z" fill="#5a3f27"/>
+          <g fill="url(#g2c)"><circle cx="262" cy="70" r="46"/><circle cx="222" cy="92" r="32"/><circle cx="304" cy="92" r="34"/><circle cx="262" cy="104" r="34"/></g>
+          <g fill="#a6dc7c" opacity=".35"><circle cx="248" cy="56" r="18"/><circle cx="214" cy="84" r="12"/></g></g>
+        <g class="beam"><path d="M120 0L230 260H160L60 0z" fill="url(#g2l)" opacity=".45"/></g>
+        <ellipse cx="116" cy="214" rx="36" ry="9" fill="#4a3220"/>
+        <path d="M116 212v-26" stroke="#5a8a3a" stroke-width="4"/><path d="M116 192c-12-2-16-12-14-18 12 0 16 6 14 18zM116 186c12-2 16-10 14-16-12 0-16 6-14 16z" fill="#6fc04a"/>
+        <g fill="#233a2a"><circle cx="62" cy="152" r="10"/><path d="M50 164q12-8 24 0l6 52h-8l-4-30-4 30h-8l-4-30-4 30h-8z"/></g>
+        <path d="M74 170l32 36" stroke="#6b4a2f" stroke-width="5" stroke-linecap="round"/><path d="M104 204l12 6-6 8-12-6z" fill="#9aa5ab"/>
+        <rect x="46" y="166" width="32" height="26" rx="6" fill="#e8913a" opacity=".9"/>
+      </svg>
+      <figcaption><b>Tree planting</b>Saplings go into concrete-edged lots where shade is needed most.</figcaption>
+    </figure>
+    <figure>
+      <svg viewBox="0 0 400 260" role="img" aria-label="Community members repairing items at a workshop table">
+        <defs>
+          <linearGradient id="g3w" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9c68f"/><stop offset="1" stop-color="#b9854d"/></linearGradient>
+          <linearGradient id="g3f" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8a5d36"/><stop offset="1" stop-color="#5a3a20"/></linearGradient>
+          <linearGradient id="g3l" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff3c8" stop-opacity=".9"/><stop offset="1" stop-color="#fff3c8" stop-opacity="0"/></linearGradient>
+          <radialGradient id="g3d" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffe9a8"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/></radialGradient>
+        </defs>
+        <rect width="400" height="260" fill="url(#g3w)"/>
+        <rect x="40" y="30" width="110" height="96" rx="4" fill="#cfe8ee"/><path d="M95 30v96M40 78h110" stroke="#7a5a3a" stroke-width="5"/>
+        <g class="beam"><path d="M40 126L150 126 300 260H120z" fill="url(#g3l)" opacity=".5"/></g>
+        <g fill="#7a5a3a"><rect x="230" y="40" width="130" height="8"/><rect x="230" y="86" width="130" height="8"/></g>
+        <g><rect x="240" y="20" width="14" height="20" fill="#4aa8d8"/><rect x="260" y="26" width="14" height="14" fill="#e2563b"/><rect x="290" y="16" width="16" height="24" fill="#6fae4a"/><rect x="246" y="62" width="18" height="24" fill="#f4b942"/><rect x="310" y="66" width="20" height="20" fill="#9a6fc0"/></g>
+        <circle cx="200" cy="56" r="40" fill="url(#g3d)" opacity=".7"/>
+        <rect y="190" width="400" height="70" fill="url(#g3f)"/>
+        <rect x="30" y="170" width="340" height="14" rx="3" fill="#a87442"/><rect x="40" y="184" width="12" height="76" fill="#7a5230"/><rect x="348" y="184" width="12" height="76" fill="#7a5230"/>
+        <g fill="#2a2a33"><circle cx="110" cy="116" r="12"/><path d="M92 134q18-10 36 0l6 40H86z"/><circle cx="260" cy="120" r="11"/><path d="M243 137q17-9 34 0l6 36h-46z"/></g>
+        <rect x="150" y="150" width="46" height="20" rx="4" fill="#6a7c86"/><circle cx="162" cy="160" r="5" fill="#d9453a"/><rect x="172" y="156" width="18" height="4" fill="#f4b942"/>
+        <path d="M124 150l24 10M246 152l-24 10" stroke="#2a2a33" stroke-width="5" stroke-linecap="round"/>
+        <rect x="300" y="150" width="36" height="20" rx="3" fill="#e8d2a8"/><path d="M304 160h28" stroke="#2f8a4a" stroke-width="3"/>
+      </svg>
+      <figcaption><b>Repair hub</b>Neighbors fix electronics, sew and upcycle instead of throwing things away.</figcaption>
+    </figure>
+  </div>
+</div></section>
+
+<section class="why" id="why"><div class="wrap">
+  <div class="sec-head"><h2>Why we do it</h2><p>The problem is big, and the solution starts close to home.</p></div>
+  <div class="why-grid">
+    <div><svg viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="20" fill="#f4b942" class="sun"/></svg><h3>Fighting climate change locally</h3><p>Global climate change can feel overwhelming. Cleaning a polluted stream or planting trees creates immediate, measurable improvements in local ecosystems.</p></div>
+    <div><svg viewBox="0 0 60 60" aria-hidden="true"><g class="wave"><path d="M0 34q10-10 20 0t20 0t20 0t20 0t20 0" stroke="#8fd9c4" stroke-width="5" fill="none"/></g><path d="M0 46q10-10 20 0t20 0t20 0" stroke="#5ec47c" stroke-width="5" fill="none" class="wave"/></svg><h3>Tackling urban pollution</h3><p>Fast urban growth has brought more plastic waste and less green space. EcoAction helps citizens stop the damage before it becomes irreversible.</p></div>
+    <div><svg viewBox="0 0 60 60" aria-hidden="true"><g class="bob"><circle cx="18" cy="26" r="8" fill="#f4b942"/><circle cx="42" cy="26" r="8" fill="#5ec47c"/><path d="M6 52q12-18 24 0q12-18 24 0z" fill="#8fd9c4"/></g></svg><h3>Building community resilience</h3><p>Environmental problems hit vulnerable urban areas hardest. When neighbors unite, communities grow stronger and look after one another and their surroundings.</p></div>
+    <div><svg viewBox="0 0 60 60" aria-hidden="true"><g class="spin2" style="animation-duration:10s"><path d="M30 8a22 22 0 0 1 20 13l-8-1M52 38a22 22 0 0 1-30 12l5-6M10 30a22 22 0 0 1 8-17l2 8" stroke="#f4b942" stroke-width="5" fill="none" stroke-linecap="round"/></g></svg><h3>Sharing responsibility</h3><p>Governments cannot protect the environment alone. The platform turns complaining into hands-on participation.</p></div>
+  </div>
+</div></section>
+
+<section id="benefits"><div class="wrap">
+  <div class="sec-head"><h2>Who benefits</h2><p>Everyone from residents to wildlife to the volunteers themselves.</p></div>
+  <div class="ben">
+    <article><h3>Local neighborhoods and residents</h3><p><b>Benefit:</b> Cleaner air, safer public spaces, healthier living conditions and a more pleasant neighborhood to live in.</p></article>
+    <article><h3>Urban wildlife and ecosystems</h3><p><b>Benefit:</b> Less plastic pollution protects local birds, fish and stray animals, and newly planted trees restore natural habitats.</p></article>
+    <article><h3>Volunteers: students and community members</h3><p><b>Benefit:</b> Teamwork and leadership skills, community service hours for university portfolios, better well-being from time outdoors and new like-minded friends.</p></article>
+    <article><h3>Local schools and youth</h3><p><b>Benefit:</b> Early environmental awareness and practical habits that support sustainable living for life.</p></article>
+  </div>
+</div></section>
+
+<section class="signup" id="signup"><div class="wrap">
+  <div class="sec-head"><h2>Sign up to volunteer</h2><p>Tell us a little about yourself and how you'd like to help. We'll get back to you with the next event.</p></div>
+  <form class="su-form" id="suForm" novalidate>
+    <div><label for="suName">Full name</label><input id="suName" name="name" type="text" autocomplete="name" required></div>
+    <div><label for="suEmail">Email</label><input id="suEmail" name="email" type="email" autocomplete="email" required></div>
+    <div class="full"><label for="suRole">How would you like to help?</label>
+      <select id="suRole" name="role">
+        <option>Neighborhood clean-up drives</option>
+        <option>Urban tree planting and greening</option>
+        <option>Eco-education workshops</option>
+        <option>Data and digital mapping</option>
+        <option>Upcycling and repair hubs</option>
+      </select></div>
+    <div class="full"><label for="suMsg">Anything else? (optional)</label><textarea id="suMsg" name="message"></textarea></div>
+    <div class="full"><button class="btn" type="submit">Sign up</button></div>
+    <p class="su-note full">Submitting opens your email app with your sign-up ready to send.</p>
+    <p class="su-status full" id="suStatus" role="status" aria-live="polite"></p>
+  </form>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <div class="box">
+    <h2>Contact</h2>
+    <p>Questions? Email us at <a href="mailto:duy058194@stu.vinschool.edu.vn">duy058194@stu.vinschool.edu.vn</a></p>
+  </div>
+</div></section>
+</main>
+
+<footer>Start local, stay curious and bring a neighbor.<small>EcoAction is an extracurricular community project.</small></footer>
+<script>
+(function(){
+  var f=document.getElementById('suForm'),s=document.getElementById('suStatus');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=f.name.value.trim(),m=f.email.value.trim();
+    if(!n||!m||m.indexOf('@')<1){s.style.color='#d9453a';s.textContent='Please enter your name and a valid email.';return}
+    var body='Name: '+n+'\nEmail: '+m+'\nInterested in: '+f.role.value+'\n\n'+f.message.value.trim();
+    window.location.href='mailto:duy058194@stu.vinschool.edu.vn?subject='+encodeURIComponent('EcoAction volunteer sign-up')+'&body='+encodeURIComponent(body);
+    s.style.color='';s.textContent='Thanks, '+n+'! Your email app should open. Just press send.';
+  });
+})();
+</script>
+</body>
+</html>
